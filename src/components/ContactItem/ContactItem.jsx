@@ -65,7 +65,6 @@ export const ContactItem = ({ avatar, name, phone, id }) => {
                 width="48"
                 onClick={() => setModalData(id)}
                 onError={e => {
-                  //console.log(name, e.target);
                   setIsValidImageUrl(false);
                 }}
               />

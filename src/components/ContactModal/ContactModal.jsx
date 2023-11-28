@@ -13,7 +13,7 @@ import {
   StyledButton,
   LabelWrapper,
   LabelSpan,
-} from './ChangeContactModal.styled';
+} from './ContactModal.styled';
 
 import Modal from 'react-modal';
 

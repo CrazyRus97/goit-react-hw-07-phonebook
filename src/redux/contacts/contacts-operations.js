@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import { toastifyOptions } from 'utilities/toastifyOptions';
 
-import * as api from 'shared/api/apiContacts';
+import * as api from 'shared/api/apiContact';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll', //actions.fetchContactsPending, actions.fetchContactsFulfilled, actions.fetchContactsRejected
