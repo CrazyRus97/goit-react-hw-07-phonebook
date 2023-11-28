@@ -101,7 +101,7 @@ export const ChangeContactModal = ({
                   <FieldFormik
                     type="tel"
                     name="phone"
-                    placeholder="+38-050-123-45-67"
+                    placeholder="+38-000-000-0000"
                   />
                   <ErrorMessage name="phone" component="span" />
                 </FormField>

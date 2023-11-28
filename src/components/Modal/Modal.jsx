@@ -15,9 +15,10 @@ import { customStyles } from 'styles/modalStyles';
 
 import { ChangeContactModal } from 'components/ContactModal/ContactModal';
 
+
 Modal.setAppElement('#root');
 
-export const ContactModal = ({ isOpen, data, onClose, isValidImageUrl }) => {
+export const ContactModal = ({ isOpen, data, onClose }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openChangeModal = () => {
@@ -41,8 +42,10 @@ export const ContactModal = ({ isOpen, data, onClose, isValidImageUrl }) => {
       </CloseBtn>
       <ModalPictureWrapper>
         <ModalPicture
+          src={data?.avatar}
           alt="photo"
-          width="260"
+          width="100"
+          height="100"
         />
       </ModalPictureWrapper>
       <PictureDescr>

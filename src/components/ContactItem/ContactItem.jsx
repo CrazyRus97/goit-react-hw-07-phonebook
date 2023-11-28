@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Tooltip } from '@chakra-ui/react';
 import Avatar from '@mui/material/Avatar';
 
-import { getRandomHexColor } from 'utilities/getRandomHexColor';
 import { abbrevName } from 'utilities/abbrevName';
-
 import { ContactModal } from 'components/Modal/Modal';
 
 // redux
@@ -47,7 +45,7 @@ export const ContactItem = ({ avatar, name, phone, id }) => {
   function stringAvatar(name) {
     return {
       sx: {
-        bgcolor: getRandomHexColor(),
+        bgcolor: '#0B139F',
       },
       children: abbrevName(name),
     };
