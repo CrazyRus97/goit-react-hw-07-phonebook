@@ -55,7 +55,7 @@ export const Btn = styled.button`
 
   &:hover,
   &:focus {
-    box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #8e9aaf;
+    box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #FCFDD7;
 
     svg {
       fill: ${p => p.theme.colors.primary};
@@ -111,7 +111,7 @@ export const ModalPictureWrapper = styled.div`
 
   &:hover {
     background: #ecf0f3;
-    box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+    box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #FCFDD7;
   }
 
   @media screen and (min-width: 480px) {

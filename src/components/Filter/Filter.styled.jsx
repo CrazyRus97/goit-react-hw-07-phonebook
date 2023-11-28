@@ -31,7 +31,7 @@ export const Input = styled.input`
   text-shadow: 0 0.5px 0.5px 0.5px #fff;
 
   background-color: transparent;
-  box-shadow: inset 1px 1px 3px #b0706f, inset -1px -1px 5px #fff;
+  box-shadow: inset 1px 1px 3px #000, inset -1px -1px 5px #fff;
 
   font-size: ${props => props.theme.fontSizes.s};
 `;

@@ -25,7 +25,7 @@ export const CloseBtn = styled.button`
 
   &:hover,
   &:focus {
-    box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #8e9aaf;
+    box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #000;
 
     svg {
       fill: ${p => p.theme.colors.primary};

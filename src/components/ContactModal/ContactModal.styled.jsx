@@ -56,7 +56,7 @@ export const FieldFormik = styled(Field)`
   color: ${props => props.theme.colors.black};
   background-color: #f2f4f5;
   text-shadow: ${props => props.theme.shadows.textShadow};
-  box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #8e9aaf;
+  box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #000;
 
   font-size: ${props => props.theme.fontSizes.s};
   letter-spacing: 1.4px;
@@ -104,7 +104,7 @@ export const StyledButton = styled.button`
 
   &:hover,
   &:focus {
-    box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #8e9aaf;
+    box-shadow: inset -1px -1px 1px #ffffff, inset 1px 1px 1px #FCFDD7;
 
     svg {
       fill: ${p => p.theme.colors.primary};
