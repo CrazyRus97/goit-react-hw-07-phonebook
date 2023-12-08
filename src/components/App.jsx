@@ -1,26 +1,28 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// components
 import { GlobalStyle } from 'styles/GlobalStyle';
-import { Layout } from './Layout/Layout';
-import { Section } from './Section/Section';
-import { Title } from './Title/Title';
-import { Filter } from './Filter/Filter';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
+import UserRoutes from './UserRoutes';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getCurrentUser } from 'redux/auth/auth-operations';
+import { useAuth } from 'hooks/useAuth';
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
-      <Layout>
-        <Section title="PhoneBook">
-          <ContactForm />
-          <Title title="Contacts" />
-          <Filter />
-          <ContactList />
-        </Section>
-        <ToastContainer />
-      </Layout>
+      {isRefreshing && <Loader/>}
+      {!isRefreshing && <UserRoutes />}
+      <ToastContainer />
       <GlobalStyle />
     </>
   );

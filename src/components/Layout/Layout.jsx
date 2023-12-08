@@ -1,5 +1,5 @@
-import { Container, MainBlock } from './Layout.styled';
 import PropTypes from 'prop-types';
+import { Container, MainBlock } from './Layout.styled';
 
 export const Layout = ({ children }) => {
   return (

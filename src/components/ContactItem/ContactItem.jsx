@@ -1,20 +1,27 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+// @chakra-ui/react'
 import { Tooltip } from '@chakra-ui/react';
+// mui
 import Avatar from '@mui/material/Avatar';
 
-import { abbrevName } from 'utilities/abbrevName';
+// functions
+import { getRandomHexColor } from 'utils/getRandomHexColor';
+import { abbrevName } from 'utils/abbrevName';
+
 import { ContactModal } from 'components/Modal/Modal';
 
 // redux
 import { deleteContact } from 'redux/contacts/contacts-operations';
 import { selectContacts } from 'redux/selectors';
 
+// style
 import { IoPersonRemove } from 'react-icons/io5';
 import {
   Btn,
   ContactDescr,
-  Image,
+  //Image,
   Item,
   ModalPictureWrapper,
   WhatsappIcon,
@@ -22,10 +29,9 @@ import {
   WrapperBtns,
 } from './ContactItem.styled';
 
-export const ContactItem = ({ avatar, name, phone, id }) => {
+export const ContactItem = ({ name, phone, id }) => {
   const contacts = useSelector(selectContacts);
   const [selectedContact, setSelectedContact] = useState(null);
-  const [isValidImageUrl, setIsValidImageUrl] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -43,9 +49,10 @@ export const ContactItem = ({ avatar, name, phone, id }) => {
   };
 
   function stringAvatar(name) {
+    //console.log(name);
     return {
       sx: {
-        bgcolor: '#0B139F',
+        bgcolor: getRandomHexColor(),
       },
       children: abbrevName(name),
     };
@@ -56,22 +63,10 @@ export const ContactItem = ({ avatar, name, phone, id }) => {
       <Item>
         <Tooltip label="Click" color="#000" fontSize="xs">
           <ModalPictureWrapper>
-            {avatar && isValidImageUrl ? (
-              <Image
-                src={avatar}
-                alt="Contact`s avatar"
-                width="48"
-                onClick={() => setModalData(id)}
-                onError={e => {
-                  setIsValidImageUrl(false);
-                }}
-              />
-            ) : (
-              <Avatar
-                onClick={() => setModalData(id)}
-                {...stringAvatar(Object.values(name).join(''))}
-              />
-            )}
+            <Avatar
+              onClick={() => setModalData(id)}
+              {...stringAvatar(Object.values(name).join(''))}
+            />
           </ModalPictureWrapper>
         </Tooltip>
         <ContactDescr>
@@ -103,8 +98,13 @@ export const ContactItem = ({ avatar, name, phone, id }) => {
         isOpen={selectedContact !== null}
         onClose={closeModal}
         data={selectedContact}
-        isValidImageUrl={isValidImageUrl}
       />
     </>
   );
+};
+
+ContactItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };

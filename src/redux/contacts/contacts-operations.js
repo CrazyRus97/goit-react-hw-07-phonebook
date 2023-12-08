@@ -1,15 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
+// toastify
 import { toast } from 'react-toastify';
-import { toastifyOptions } from 'utilities/toastifyOptions';
+import { toastifyOptions } from 'utils/toastifyOptions';
 
-import * as api from 'shared/api/apiContact';
+import * as api from 'shared/api/contactsServices';
 
 export const fetchContacts = createAsyncThunk(
-  'contacts/fetchAll', //actions.fetchContactsPending, actions.fetchContactsFulfilled, actions.fetchContactsRejected
+  'contacts/getAll', // самостійно створює actions.fetchContactsPending, actions.fetchContactsFulfilled, actions.fetchContactsRejected
   async (_, thunkAPI) => {
     try {
       const { data } = await api.getAllContacts();
+      //console.log(data);
       return data;
     } catch ({ response }) {
       return thunkAPI.rejectWithValue(
@@ -19,15 +20,15 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-// Dublicates
-const isDublicate = (contacts, { name, phone }) => {
+// ф-ція перевірка на дублікати
+const isDublicate = (contacts, { name, number }) => {
   const normalizedName = name.toLowerCase().trim();
-  const normalizedNumber = phone.trim();
+  const normalizedNumber = number.trim();
 
   const dublicate = contacts.some(
     contact =>
       contact.name.toLowerCase().trim() === normalizedName ||
-      contact.phone.trim() === normalizedNumber
+      contact.number.trim() === normalizedNumber
   );
   return dublicate;
 };
@@ -45,7 +46,7 @@ export const addContact = createAsyncThunk(
       return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
     }
   },
-
+  // щоб зробити перевірку до запиту на дублікати - передаємо 3-ім аргументом object with condition
   {
     condition: (data, { getState }) => {
       const {
@@ -54,7 +55,7 @@ export const addContact = createAsyncThunk(
 
       if (isDublicate(items, data)) {
         toast.error(`This contact is already in contacts`, toastifyOptions);
-        return false; 
+        return false; // якщо false  - запит преривається і не відбувається, в іншому випадку - запит продовжиться
       }
     },
   }
@@ -83,6 +84,7 @@ export const changeContact = createAsyncThunk(
       toast.success('Contact update', {
         position: 'bottom-right',
       });
+      // console.log(result);
       return result;
     } catch ({ response }) {
       return rejectWithValue(`Ooops! Wrong... Try again or update browser`);

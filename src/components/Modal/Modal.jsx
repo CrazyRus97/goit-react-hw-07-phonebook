@@ -1,20 +1,24 @@
 import Modal from 'react-modal';
-import { useState } from 'react';
-import { TfiPencil } from 'react-icons/tfi';
-import { MdOutlineClose } from 'react-icons/md';
-import { Tooltip } from '@mui/material';
 
+import { MdOutlineClose } from 'react-icons/md';
+import Av from 'assets/avatar.png';
 import {
+  BorderInside,
+  BorderOutside,
   Button,
   CloseBtn,
   ModalPicture,
-  ModalPictureWrapper,
+  PhotoThumb,
+  PhotoWrap,
   PictureDescr,
 } from './Modal.styled';
 import { customStyles } from 'styles/modalStyles';
+import { useState } from 'react';
 
+import { Tooltip } from '@chakra-ui/react';
+
+import { TfiPencil } from 'react-icons/tfi';
 import { ChangeContactModal } from 'components/ContactModal/ContactModal';
-
 
 Modal.setAppElement('#root');
 
@@ -40,32 +44,20 @@ export const ContactModal = ({ isOpen, data, onClose }) => {
       <CloseBtn onClick={onClose}>
         <MdOutlineClose />
       </CloseBtn>
-      <ModalPictureWrapper>
-        <ModalPicture
-          src={data?.avatar}
-          alt="photo"
-          width="100"
-          height="100"
-        />
-      </ModalPictureWrapper>
+      <PhotoWrap>
+        <BorderOutside>
+          <BorderInside>
+            <PhotoThumb>
+              <ModalPicture src={Av} alt="photo" width="260" />
+            </PhotoThumb>
+          </BorderInside>
+        </BorderOutside>
+      </PhotoWrap>
       <PictureDescr>
         <p>{data?.name}</p>
-        <Tooltip
-          title="Call"
-          describeChild
-          PopperProps={{
-            sx: {
-              '& .MuiTooltip-tooltip': {
-                bgcolor: '#608B38',
-                color: '#FFF',
-                width: '50px',
-                textAlign: 'center',
-              },
-            },
-          }}
-        >
+        <Tooltip label="Call" hasArrow bg="gray.300" color="#000" fontSize="xs">
           <p>
-            <a href={'tel:' + data?.phone}>{data?.phone}</a>
+            <a href={'tel:' + data?.phone}>{data?.number}</a>
           </p>
         </Tooltip>
       </PictureDescr>

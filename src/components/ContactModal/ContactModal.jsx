@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Formik } from 'formik';
+import 'yup-phone';
 
 // redux
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
@@ -34,11 +35,10 @@ export const ChangeContactModal = ({
 }) => {
   const [formValues, setFormValues] = useState(data || {});
 
-  const initialValues = { avatar: '', name: '', phone: '' };
+  const initialValues = { name: '', number: '' };
   const savedValues = {
-    avatar: data?.avatar || '',
     name: data?.name || '',
-    phone: data?.phone || '',
+    number: data?.number || '',
   };
 
   const dispatch = useDispatch();
@@ -80,14 +80,6 @@ export const ChangeContactModal = ({
                 <FormField>
                   <LabelWrapper>
                     <BsPersonFill />
-                    <LabelSpan>Avatar</LabelSpan>
-                  </LabelWrapper>
-                  <FieldFormik name="avatar" placeholder="Add link to avatar" />
-                  <ErrorMessage name="avatar" component="span" />
-                </FormField>
-                <FormField>
-                  <LabelWrapper>
-                    <BsPersonFill />
                     <LabelSpan>Name</LabelSpan>
                   </LabelWrapper>
                   <FieldFormik type="text" name="name" placeholder="Name" />
@@ -96,14 +88,14 @@ export const ChangeContactModal = ({
                 <FormField>
                   <LabelWrapper>
                     <BsFillTelephoneFill />
-                    <LabelSpan>Number</LabelSpan>
+                    <LabelSpan>Phone Number</LabelSpan>
                   </LabelWrapper>
                   <FieldFormik
                     type="tel"
-                    name="phone"
-                    placeholder="+38-000-000-0000"
+                    name="number"
+                    placeholder="+38-050-123-45-67"
                   />
-                  <ErrorMessage name="phone" component="span" />
+                  <ErrorMessage name="number" component="span" />
                 </FormField>
                 <StyledButton
                   type="submit"
