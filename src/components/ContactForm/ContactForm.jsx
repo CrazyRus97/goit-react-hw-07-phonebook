@@ -53,7 +53,7 @@ export const ContactForm = () => {
           <FieldFormik
             type="tel"
             name="number"
-            placeholder="+38-050-123-45-67"
+            placeholder="+38-000-000-00-00"
           />
           <ErrorMessage name="number" component="span" />
         </FormField>

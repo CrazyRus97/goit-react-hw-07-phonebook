@@ -41,8 +41,6 @@ export default function Register() {
       password: data.get('password'),
     };
 
-    //console.log('form reg user: ', user);
-
     if (user.name === '') {
       setEmpty(prev => ({ ...prev, name: true }));
       return;

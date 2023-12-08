@@ -6,7 +6,7 @@ const Footer = () => {
     <FooterBlock>
       <p>
         Created by
-        <a href="https://github.com/Iryna-Vyshniak"> &copy; Iryna V-N </a>{' '}
+        <a href="https://github.com/CrazyRus97"> &copy; Fedorenko R </a>{' '}
         {new Date().getFullYear()}
       </p>
     </FooterBlock>

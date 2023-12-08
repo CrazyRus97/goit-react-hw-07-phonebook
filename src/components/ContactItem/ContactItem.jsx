@@ -1,27 +1,21 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-// @chakra-ui/react'
 import { Tooltip } from '@chakra-ui/react';
-// mui
 import Avatar from '@mui/material/Avatar';
 
-// functions
 import { getRandomHexColor } from 'utils/getRandomHexColor';
 import { abbrevName } from 'utils/abbrevName';
 
 import { ContactModal } from 'components/Modal/Modal';
 
-// redux
 import { deleteContact } from 'redux/contacts/contacts-operations';
 import { selectContacts } from 'redux/selectors';
 
-// style
 import { IoPersonRemove } from 'react-icons/io5';
 import {
   Btn,
   ContactDescr,
-  //Image,
   Item,
   ModalPictureWrapper,
   WhatsappIcon,
@@ -81,7 +75,7 @@ export const ContactItem = ({ name, phone, id }) => {
               <WhatsappShareButton
                 url={'tel:' + phone}
                 title={'contact' + name}
-                hashtag="#telnumber"
+                hashtag="#number"
               >
                 <WhatsappIcon size={30} round={true} />
               </WhatsappShareButton>

@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filter/filter-slice';
 import { selectFilter } from 'redux/selectors';
-
 import { BsSearch } from 'react-icons/bs';
 import { LabelWrapper, Input, LabelDescr, LabelSpan } from './Filter.styled';
 

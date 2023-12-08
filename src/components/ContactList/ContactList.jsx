@@ -1,11 +1,8 @@
 import { useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-// toastify
 import { toast } from 'react-toastify';
 import { toastifyOptions } from 'utils/toastifyOptions';
 
-// redux
 import { fetchContacts } from 'redux/contacts/contacts-operations';
 import {
   selectContacts,
@@ -15,10 +12,7 @@ import {
   selectFilter,
 } from 'redux/selectors';
 
-// conponents
 import { Loader } from 'components/Loader/Loader';
-
-// style
 import { Info, List } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 
@@ -27,9 +21,6 @@ export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const filter = useSelector(selectFilter);
-
-  //console.log(contacts);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

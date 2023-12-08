@@ -6,7 +6,7 @@ const PageNotFound = () => {
     <div>
       <PageNf>
         <Wrap>
-          <h1>404</h1>
+          <h1>ERROR 404</h1>
           <p>Page not found...</p>
         </Wrap>
       </PageNf>
