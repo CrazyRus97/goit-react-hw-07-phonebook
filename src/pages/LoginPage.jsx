@@ -18,7 +18,7 @@ import { logInUser } from 'redux/auth/auth-operations';
 const defaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#FFFFFF',
+      main: '#5893b0',
     },
   },
 });
@@ -59,7 +59,7 @@ export default function Login() {
         component="main"
         sx={{
           height: '100vh',
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/mobile-phone-1917737.jpg?updatedAt=1684182004004")`,
+          backgroundImage: `url("https://ik.imagekit.io/CrazyRus97/feature-image-2.jpg?updatedAt=1702114539251")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'

@@ -28,7 +28,7 @@ const Contacts = () => {
         container
         component="main"
         sx={{
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/phone.jpg?updatedAt=1684367039883")`,
+          backgroundImage: `url("https://ik.imagekit.io/CrazyRus97/People%20on%20their%20smartphones.jpg?updatedAt=1702115477877")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'
@@ -51,7 +51,7 @@ const Contacts = () => {
           square
           sx={{
             height: '100%',
-            background: '#dfcece99',
+            background: '#ffff',
             backdropFilter: 'blur(7.5px)',
           }}
         >

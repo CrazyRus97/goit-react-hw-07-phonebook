@@ -7,10 +7,12 @@ import { Section } from 'components/Section/Section';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Advertising } from 'components/Advertising/Advertising';
 
+import HomeImg from 'assets/feature-image-1.jpg';
+
 const defaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#608B38',
+      main: '#383b8b',
     },
     secondary: {
       main: '#dee2ff',
@@ -26,7 +28,7 @@ const Home = () => {
         component="main"
         sx={{
           height: '100vh',
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/mobile-phone-1572901.jpg?updatedAt=1684181964478")`,
+          backgroundImage: `url("https://ik.imagekit.io/CrazyRus97/michal-biernat-h0xEUQXzU38-unsplash.jpg?updatedAt=1702114541231")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'

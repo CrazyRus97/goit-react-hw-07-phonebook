@@ -28,7 +28,7 @@ export const NavLink = styled(Link)`
     box-shadow: inset -1px -1px 3px #fff, inset 1px 1px 3px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
 
-    background-color: transparent;
+    background-color: #faf75c;
     color: ${props => props.theme.colors.primary};
     text-shadow: ${props => props.theme.shadows.textShadow};
 

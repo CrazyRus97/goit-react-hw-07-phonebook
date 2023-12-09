@@ -19,7 +19,7 @@ import { useState } from 'react';
 const defaultTheme = createTheme({
   palette: {
     primary: {
-      main: '#608B38',
+      main: '#383b8b',
     },
   },
 });
@@ -65,7 +65,7 @@ export default function Register() {
         component="main"
         sx={{
           height: '100vh',
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/mobile-phone-1572901.jpg?updatedAt=1684181964478")`,
+          backgroundImage: `url("https://ik.imagekit.io/CrazyRus97/contacts-.jpg?updatedAt=1702114565401")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'
@@ -144,7 +144,7 @@ export default function Register() {
                     error={empty.email}
                     sx={{ boxShadow: 3 }}
                     helperText={
-                      'Example of valid email address: qwerty1@example.com'
+                      'Example of valid email address: ZXCqweFGH1@example.com'
                     }
                   />
                 </Grid>
@@ -158,7 +158,6 @@ export default function Register() {
                     id="password"
                     autoComplete="new-password"
                     sx={{ boxShadow: 3 }}
-                    //inputProps={{ minLength: 7 }}
                     error={passwordValid.length < 7}
                     onChange={e => setPasswordValid(e.target.value)}
                     helperText={'Password should contains at least 7 symbols'}

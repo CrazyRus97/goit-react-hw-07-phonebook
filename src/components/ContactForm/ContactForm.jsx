@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
 import 'yup-phone';
 import { schema } from 'shared/schemaYup';
-// redux
+
 import { addContact } from 'redux/contacts/contacts-operations';
 
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
@@ -30,7 +30,6 @@ export const ContactForm = () => {
     <Formik
       initialValues={initialValues}
       onSubmit={(values, { resetForm }) => {
-        // console.log(values);
         onAddContact({ ...values });
         resetForm();
       }}

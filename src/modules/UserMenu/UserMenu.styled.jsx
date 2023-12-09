@@ -9,15 +9,15 @@ export const Wrapper = styled.div`
 
   > p {
     color: ${props => props.theme.colors.primary};
-    text-shadow: 0 -0.4px 0.4px #ffffff, 1px 1px 1px #00000031;
+    text-shadow: 0 -0px 0px #ffffff, 1px 1px 1px #00000031;
     font-weight: 700;
   }
 `;
 
 export const StyledBadge = styles(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
-    backgroundColor: '#44b700',
-    color: '#44b700',
+    backgroundColor: '#0043b7',
+    color: '#0043b7',
     boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
     '&::after': {
       position: 'absolute',

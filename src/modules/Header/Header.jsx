@@ -87,7 +87,7 @@ const Header = () => {
               sx={{
                 mr: 2,
                 display: { sm: 'none' },
-                color: '#A0C972',
+                color: '#7298c9',
               }}
               onClick={handleDrawerToggle}
             >
