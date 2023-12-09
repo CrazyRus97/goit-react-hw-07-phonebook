@@ -7,7 +7,6 @@ import { Section } from 'components/Section/Section';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Advertising } from 'components/Advertising/Advertising';
 
-import HomeImg from 'assets/feature-image-1.jpg';
 
 const defaultTheme = createTheme({
   palette: {
