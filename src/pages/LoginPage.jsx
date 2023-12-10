@@ -30,9 +30,11 @@ export default function Login() {
   const onSignIn = location.pathname === '/login';
 
   const [empty, setEmpty] = useState({ email: false, password: false });
+  const [passwordValid, setPasswordValid] = useState({ password: false });
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const data = new FormData(e.currentTarget);
 
     const user = {
@@ -44,8 +46,9 @@ export default function Login() {
       setEmpty(prev => ({ ...prev, email: true }));
       return;
     }
-    if (user.password === '') {
-      setEmpty(prev => ({ ...prev, password: true }));
+    if (user.password.length < 7 && user.password === '') {
+      setPasswordValid(prev => ({ ...prev, password: true }));
+      
       return;
     }
 
@@ -142,7 +145,8 @@ export default function Login() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
-                  error={empty.password}
+                  error={passwordValid.length < 7}
+                  onChange={e => setPasswordValid(e.target.value)}
                   sx={{ boxShadow: 3 }}
                 />
                 <FormControlLabel
