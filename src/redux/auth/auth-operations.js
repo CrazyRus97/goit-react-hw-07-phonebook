@@ -37,6 +37,10 @@ export const logInUser = createAsyncThunk(
       //console.log('login:', result);
       return result;
     } catch (error) {
+      toast.error('Incorrect data!', {
+        position: 'bottom-right',
+        autoClose: 1500,
+      });
       return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
     }
   }
